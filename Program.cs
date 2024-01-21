@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -20,13 +21,6 @@ public class Program
         //English
         Console.WriteLine("Write a note for English test: ");
         int eng1 = Convert.ToInt32(Console.ReadLine());
-        /*if (eng1 <=10)
-        {
-            Console.WriteLine("Note cadastre");
-        } else {
-            Console.WriteLine("Note invalid!");
-            Console.WriteLine("Write a valid note");
-        }*/
 
         Console.WriteLine("Write a note for second English test: ");
         int eng2 = Convert.ToInt32(Console.ReadLine());
@@ -59,19 +53,19 @@ public class Program
         int computer_classes = 40;
 
         //english frequences
-        Console.WriteLine("Write how amny classes the English subject had:");
+        Console.WriteLine("How many absences the student had in the English subject:");
         int engf = Convert.ToInt32(Console.ReadLine());
 
         //algebra frequences
-        Console.WriteLine("Write how amny classes the Algebra subject had:");
+        Console.WriteLine("How many absences the student had in the ALgebra subject:");
         int algf = Convert.ToInt32(Console.ReadLine());
 
         //algorithm frequences
-        Console.WriteLine("Write how amny classes the Algorithm subject had:");
+        Console.WriteLine("How many absences the student had in the Algorithm subject:");
         int alrf = Convert.ToInt32(Console.ReadLine());
 
         //computer science frequences
-        Console.WriteLine("Write how amny classes the Computer Science subject had:");
+        Console.WriteLine("How many absences the student had in the Computer Science subject:");
         int comf = Convert.ToInt32(Console.ReadLine());
 
         //presenças do estudante
@@ -153,13 +147,70 @@ public class Program
             total4 = "Approved";
         }
 
+        //Situação final do estudante
+        string final1 = "Approved";
+        if (total1 == "Approved" && totalf1 == "Approved")
+        {
+            final1 = "Approved by grade and attendance";
+        } else if (total1 == "Approved" && totalf1 == "Disapproved")
+        {
+            final1 = "Failed due to absence";
+        } else if (total1 == "Disapproved" && totalf1 == "Approved")
+        {
+            final1 = "Failed by grade";
+        } else {
+            final1 = "Failed due to grade and absence";
+        }
+
+        string final2 = "Approved";
+        if (total2 == "Approved" && totalf2 == "Approved")
+        {
+            final2 = "Approved by grade and attendance";
+        } else if (total2 == "Approved" && totalf2 == "Disapproved")
+        {
+            final2 = "Failed due to absence";
+        } else if (total2 == "Disapproved" && totalf2 == "Approved")
+        {
+            final2 = "Failed by grade";
+        } else {
+            final2 = "Failed due to grade and absence";
+        }
+
+        string final3 = "Approved";
+        if (total3 == "Approved" && totalf3 == "Approved")
+        {
+            final3 = "Approved by grade and attendance";
+        } else if (total3 == "Approved" && totalf3 == "Disapproved")
+        {
+            final3 = "Failed due to absence";
+        } else if (total3 == "Disapproved" && totalf3 == "Approved")
+        {
+            final3 = "Failed by grade";
+        } else {
+            final3 = "Failed due to grade and absence";
+        }
+
+        string final4 = "Approved";
+        if (total4 == "Approved" && totalf4 == "Approved")
+        {
+            final4 = "Approved by grade and attendance";
+        } else if (total1 == "Approved" && totalf1 == "Disapproved")
+        {
+            final4 = "Failed due to absence";
+        } else if (total4 == "Disapproved" && totalf4 == "Approved")
+        {
+            final4 = "Failed by grade";
+        } else {
+            final4 = "Failed due to grade and absence";
+        }
+
         //boletim
         Console.WriteLine("\nGrade\n");
         Console.WriteLine("Studant: " + name + "\n");
-        Console.WriteLine("Course:\t\t\tGrade:\tSituacion per grade:\tPresences:\tSituacion per presence");
-        Console.WriteLine($"English\t\t\t{engm}\t{total1}\t\t{fre1}\t\t{totalf1}");
-        Console.WriteLine($"Algebra\t\t\t{algm}\t{total2}\t\t{fre2}\t\t{totalf2}");
-        Console.WriteLine($"Algorithm\t\t{alrm}\t{total3}\t\t{fre3}\t\t{totalf3}");
-        Console.WriteLine($"Computer Science\t{comm}\t{total4}\t\t{fre4}\t\t{totalf4}");
+        Console.WriteLine("Course:\t\t\tGrade:\tSituacion by grade:\tPresences:\tSituacion by presence:\t\tFinal situacion:\n");
+        Console.WriteLine($"English\t\t\t{engm}\t{total1}\t\t{fre1}\t\t{totalf1}\t\t\t{final1}");
+        Console.WriteLine($"Algebra\t\t\t{algm}\t{total2}\t\t{fre2}\t\t{totalf2}\t\t\t{final2}");
+        Console.WriteLine($"Algorithm\t\t{alrm}\t{total3}\t\t{fre3}\t\t{totalf3}\t\t\t{final3}");
+        Console.WriteLine($"Computer Science\t{comm}\t{total4}\t\t{fre4}\t\t{totalf4}\t\t\t{final4}\n");
     }
 }
