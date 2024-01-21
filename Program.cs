@@ -18,7 +18,7 @@ public class Program
         //declaração de notas
 
         //English
-        Console.WriteLine("Write a note for English test");
+        Console.WriteLine("Write a note for English test: ");
         int eng1 = Convert.ToInt32(Console.ReadLine());
         /*if (eng1 <=10)
         {
@@ -28,29 +28,91 @@ public class Program
             Console.WriteLine("Write a valid note");
         }*/
 
-        Console.WriteLine("Write a note for second English test");
+        Console.WriteLine("Write a note for second English test: ");
         int eng2 = Convert.ToInt32(Console.ReadLine());
 
         //Algebra
-        Console.WriteLine("Write a note for Algebra test");
+        Console.WriteLine("Write a note for Algebra test: ");
         int alg1 = Convert.ToInt32(Console.ReadLine());
 
-        Console.WriteLine("Write a note for second Algebra test");
+        Console.WriteLine("Write a note for second Algebra test: ");
         int alg2 = Convert.ToInt32(Console.ReadLine());
 
         //Algorithm
-        Console.WriteLine("Write a note for Algorithm test");
+        Console.WriteLine("Write a note for Algorithm test: ");
         int alr1 = Convert.ToInt32(Console.ReadLine());
 
-        Console.WriteLine("Write a note for second Algorithm test");
+        Console.WriteLine("Write a note for second Algorithm test: ");
         int alr2 = Convert.ToInt32(Console.ReadLine());
 
         //Computer Science
-        Console.WriteLine("Write a note for Computer Science test");
+        Console.WriteLine("Write a note for Computer Science test: ");
         int com1 = Convert.ToInt32(Console.ReadLine());
 
-        Console.WriteLine("Write a note for second Computer Science test");
+        Console.WriteLine("Write a note for second Computer Science test: ");
         int com2 = Convert.ToInt32(Console.ReadLine());
+
+        //frequencia
+        int english_classes = 40;
+        int algebra_classes = 80;
+        int algorithm_classes = 80;
+        int computer_classes = 40;
+
+        //english frequences
+        Console.WriteLine("Write how amny classes the English subject had:");
+        int engf = Convert.ToInt32(Console.ReadLine());
+
+        //algebra frequences
+        Console.WriteLine("Write how amny classes the Algebra subject had:");
+        int algf = Convert.ToInt32(Console.ReadLine());
+
+        //algorithm frequences
+        Console.WriteLine("Write how amny classes the Algorithm subject had:");
+        int alrf = Convert.ToInt32(Console.ReadLine());
+
+        //computer science frequences
+        Console.WriteLine("Write how amny classes the Computer Science subject had:");
+        int comf = Convert.ToInt32(Console.ReadLine());
+
+        //presenças do estudante
+        //English
+        int fre1 = english_classes - engf;
+        int fre2 = algebra_classes - algf;
+        int fre3 = algorithm_classes - alrf;
+        int fre4 = computer_classes - comf;
+
+        //Situação do estudante por presenças
+        string totalf1 = "Approved";
+        if (fre1 <20)
+        {
+            totalf1 = "Disapproved";
+        } else {
+            totalf1 = "Approved";
+        }
+
+        string totalf2 = "Approved";
+        if (fre2 <40)
+        {
+            totalf2 = "Disapproved";
+        } else {
+            totalf2 = "Approved";
+        }
+
+        string totalf3 = "Approved";
+        if (fre3 <40)
+        {
+            totalf3 = "Disapproved";
+        } else {
+            totalf3 = "Approved";
+        }
+
+        string totalf4 = "Approved";
+        if (fre4 <20)
+        {
+            totalf4 = "Disapproved";
+        } else {
+            totalf4 = "Approved";
+        }
 
         //calculo das medias
         decimal engm = (eng1 + eng2) / 2m;
@@ -94,10 +156,10 @@ public class Program
         //boletim
         Console.WriteLine("\nGrade\n");
         Console.WriteLine("Studant: " + name + "\n");
-        Console.WriteLine("Course:\t\t\tNotes:\tSituacion per note:");
-        Console.WriteLine($"English\t\t\t{engm}\t{total1}");
-        Console.WriteLine($"Algebra\t\t\t{algm}\t{total2}");
-        Console.WriteLine($"Algorithm\t\t{alrm}\t{total3}");
-        Console.WriteLine($"Computer Science\t{comm}\t{total4}");
+        Console.WriteLine("Course:\t\t\tGrade:\tSituacion per grade:\tPresences:\tSituacion per presence");
+        Console.WriteLine($"English\t\t\t{engm}\t{total1}\t\t{fre1}\t\t{totalf1}");
+        Console.WriteLine($"Algebra\t\t\t{algm}\t{total2}\t\t{fre2}\t\t{totalf2}");
+        Console.WriteLine($"Algorithm\t\t{alrm}\t{total3}\t\t{fre3}\t\t{totalf3}");
+        Console.WriteLine($"Computer Science\t{comm}\t{total4}\t\t{fre4}\t\t{totalf4}");
     }
 }
