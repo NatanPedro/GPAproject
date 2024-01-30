@@ -16,6 +16,23 @@ public class Program
         Console.WriteLine("Write a student name: ");
         string? name = Console.ReadLine();
 
+        while (name == "")
+        {
+            Console.WriteLine("ERROR! enter the name again: ");
+            name = Console.ReadLine();
+            continue;
+        }
+
+        Console.WriteLine("Write a student surname: ");
+        string? surname = Console.ReadLine();
+
+        while (surname == "")
+        {
+            Console.WriteLine("ERROR! enter the surname again: ");
+            surname = Console.ReadLine();
+            continue;
+        }
+        
         //declaração de notas
 
         //English
@@ -47,17 +64,17 @@ public class Program
         int com2 = Convert.ToInt32(Console.ReadLine());
 
         //frequencia
-        int english_classes = 40;
-        int algebra_classes = 80;
-        int algorithm_classes = 80;
-        int computer_classes = 40;
+        int english_classes = 20;
+        int algebra_classes = 40;
+        int algorithm_classes = 40;
+        int computer_classes = 20;
 
         //english frequences
         Console.WriteLine("How many absences the student had in the English subject:");
         int engf = Convert.ToInt32(Console.ReadLine());
 
         //algebra frequences
-        Console.WriteLine("How many absences the student had in the ALgebra subject:");
+        Console.WriteLine("How many absences the student had in the Algebra subject:");
         int algf = Convert.ToInt32(Console.ReadLine());
 
         //algorithm frequences
@@ -206,7 +223,7 @@ public class Program
 
         //boletim
         Console.WriteLine("\nGrade\n");
-        Console.WriteLine("Studant: " + name + "\n");
+        Console.WriteLine($"Studant: {name} {surname}\n");
         Console.WriteLine("Course:\t\t\tGrade:\tSituacion by grade:\tPresences:\tSituacion by presence:\t\tFinal situacion:\n");
         Console.WriteLine($"English\t\t\t{engm}\t{total1}\t\t{fre1}\t\t{totalf1}\t\t\t{final1}");
         Console.WriteLine($"Algebra\t\t\t{algm}\t{total2}\t\t{fre2}\t\t{totalf2}\t\t\t{final2}");
