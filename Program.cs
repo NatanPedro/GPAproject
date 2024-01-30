@@ -39,29 +39,85 @@ public class Program
         Console.WriteLine("Write a note for English test: ");
         int eng1 = Convert.ToInt32(Console.ReadLine());
 
+        while (eng1 < 0 && eng1 > 10)
+        {
+            Console.WriteLine("ERROR! invalid note, type again: ");
+            eng1 = Console.Read();
+            continue;
+        }
+
         Console.WriteLine("Write a note for second English test: ");
         int eng2 = Convert.ToInt32(Console.ReadLine());
+
+        while (eng2 < 0 && eng2 > 10)
+        {
+            Console.WriteLine("ERROR! invalid note, type again: ");
+            eng2 = Console.Read();
+            continue;
+        }
 
         //Algebra
         Console.WriteLine("Write a note for Algebra test: ");
         int alg1 = Convert.ToInt32(Console.ReadLine());
 
+        while (alg1 < 0 && alg1 > 10)
+        {
+            Console.WriteLine("ERROR! invalid note, type again: ");
+            alg1 = Console.Read();
+            continue;
+        }
+
         Console.WriteLine("Write a note for second Algebra test: ");
         int alg2 = Convert.ToInt32(Console.ReadLine());
+
+        while (alg2 < 0 && alg2 > 10)
+        {
+            Console.WriteLine("ERROR! invalid note, type again: ");
+            alg2 = Console.Read();
+            continue;
+        }
 
         //Algorithm
         Console.WriteLine("Write a note for Algorithm test: ");
         int alr1 = Convert.ToInt32(Console.ReadLine());
 
+        while (alr1 < 0 && alr1 > 10)
+        {
+            Console.WriteLine("ERROR! invalid note, type again: ");
+            alr1 = Console.Read();
+            continue;
+        }
+
         Console.WriteLine("Write a note for second Algorithm test: ");
         int alr2 = Convert.ToInt32(Console.ReadLine());
+
+        while (alr2 < 0 && alr2 > 10)
+        {
+            Console.WriteLine("ERROR! invalid note, type again: ");
+            alr2 = Console.Read();
+            continue;
+        }
 
         //Computer Science
         Console.WriteLine("Write a note for Computer Science test: ");
         int com1 = Convert.ToInt32(Console.ReadLine());
 
+        while (com1 < 0 && com1 > 10)
+        {
+            Console.WriteLine("ERROR! invalid note, type again: ");
+            com1 = Console.Read();
+            continue;
+        }
+
         Console.WriteLine("Write a note for second Computer Science test: ");
         int com2 = Convert.ToInt32(Console.ReadLine());
+
+        while (com2 < 0 && com2 > 10)
+        {
+            Console.WriteLine("ERROR! invalid note, type again: ");
+            com2 = Console.Read();
+            continue;
+        }
 
         //frequencia
         int english_classes = 20;
@@ -73,20 +129,47 @@ public class Program
         Console.WriteLine("How many absences the student had in the English subject:");
         int engf = Convert.ToInt32(Console.ReadLine());
 
+        while (engf < 0 && engf > 20)
+        {
+            Console.WriteLine("ERROR! invalid number, type again: ");
+            engf = Console.Read();
+            continue;
+        }
+
         //algebra frequences
         Console.WriteLine("How many absences the student had in the Algebra subject:");
         int algf = Convert.ToInt32(Console.ReadLine());
+
+        while (algf < 0 && algf > 40)
+        {
+            Console.WriteLine("ERROR! invalid number, type again: ");
+            algf = Console.Read();
+            continue;
+        }
 
         //algorithm frequences
         Console.WriteLine("How many absences the student had in the Algorithm subject:");
         int alrf = Convert.ToInt32(Console.ReadLine());
 
+        while (alrf < 0 && alrf > 40)
+        {
+            Console.WriteLine("ERROR! invalid note, type again: ");
+            alrf = Console.Read();
+            continue;
+        }
+
         //computer science frequences
         Console.WriteLine("How many absences the student had in the Computer Science subject:");
         int comf = Convert.ToInt32(Console.ReadLine());
 
+        while (comf < 0 && comf > 10)
+        {
+            Console.WriteLine("ERROR! invalid note, type again: ");
+            comf = Console.Read();
+            continue;
+        }
+
         //presenças do estudante
-        //English
         int fre1 = english_classes - engf;
         int fre2 = algebra_classes - algf;
         int fre3 = algorithm_classes - alrf;
@@ -94,7 +177,7 @@ public class Program
 
         //Situação do estudante por presenças
         string totalf1 = "Approved";
-        if (fre1 <20)
+        if (fre1 <10)
         {
             totalf1 = "Disapproved";
         } else {
@@ -102,7 +185,7 @@ public class Program
         }
 
         string totalf2 = "Approved";
-        if (fre2 <40)
+        if (fre2 <20)
         {
             totalf2 = "Disapproved";
         } else {
@@ -110,7 +193,7 @@ public class Program
         }
 
         string totalf3 = "Approved";
-        if (fre3 <40)
+        if (fre3 <20)
         {
             totalf3 = "Disapproved";
         } else {
@@ -118,7 +201,7 @@ public class Program
         }
 
         string totalf4 = "Approved";
-        if (fre4 <20)
+        if (fre4 <10)
         {
             totalf4 = "Disapproved";
         } else {
